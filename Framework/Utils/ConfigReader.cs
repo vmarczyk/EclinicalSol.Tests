@@ -9,6 +9,7 @@ public static class ConfigReader
     private static readonly IConfiguration Config = new ConfigurationBuilder()
         .SetBasePath(Directory.GetCurrentDirectory())
         .AddJsonFile("appsettings.json")
+        .AddEnvironmentVariables()
         .Build();
 
     public static string GetBaseUrl()

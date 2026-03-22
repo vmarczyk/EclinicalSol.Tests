@@ -23,7 +23,8 @@ public static class DriverFactory
         var options = new ChromeOptions();
         options.AddArgument("--no-sandbox");
         options.AddArgument("--disable-dev-shm-usage");
-        if (headless) options.AddArgument("--headless");
+        options.AddArgument("--disable-gpu");
+        if (headless) options.AddArgument("--headless=new");
         return new ChromeDriver(options);
     }
 }

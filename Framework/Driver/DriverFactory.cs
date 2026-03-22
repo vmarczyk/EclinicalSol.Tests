@@ -23,7 +23,7 @@ public static class DriverFactory
         var options = new ChromeOptions();
         options.AddArgument("--no-sandbox");
         options.AddArgument("--disable-dev-shm-usage");
-        // options.AddArgument("--headless");
+        options.AddArgument("--headless");
         return new ChromeDriver(options);
     }
 }

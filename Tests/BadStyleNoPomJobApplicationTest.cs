@@ -5,7 +5,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 
-namespace EclinicalSol.Tests.Tests;
+namespace EclinicalSol.Tests.Examples;
 
 // Example of BAD TEST: no Page Object Model, all logic in test method
 [TestFixture]

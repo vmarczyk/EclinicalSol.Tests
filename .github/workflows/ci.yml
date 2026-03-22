@@ -28,6 +28,6 @@ jobs:
       - name: Run tests
         run: >
           dotnet test --no-build
-          --filter "Namespace=EclinicalSol.Tests.Tests"
+          --filter "FullyQualifiedName~EclinicalSol.Tests.Tests"
         env:
           DISPLAY: :99

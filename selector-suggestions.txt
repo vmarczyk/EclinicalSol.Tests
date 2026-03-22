@@ -1,0 +1,26 @@
+Selector review — ALL Selectors.cs classes
+----------------------------------------------------------------------------
+1. ApplicationFormSelectors.cs
+----------------------------------------------------------------------------
+  - Custom questions: question_11353177007-style ids — HIGH RISK: these ids are tied to
+   question records; duplicating the job/board or changing questions can change
+    ids and break tests.
+
+----------------------------------------------------------------------------
+2. CareersPageSelectors.cs
+----------------------------------------------------------------------------
+  - LinkText("View Open Positions") — not good. prefer data-testid on CTA.
+
+----------------------------------------------------------------------------
+3. HomePageSelectors.cs
+----------------------------------------------------------------------------
+  - #menu-item-170 / #menu-item-5597 — ids changes when menus change; prefer
+    data-testid on nav links.
+
+----------------------------------------------------------------------------
+4. JobBoardPageSelectors.cs
+----------------------------------------------------------------------------
+  - keyword-filter id + data-testid job-count-header — ok
+  - Job row by title + CSS classes — prefer row/job test ids 
+
+----------------------------------------------------------------------------

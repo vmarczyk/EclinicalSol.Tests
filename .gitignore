@@ -1,0 +1,72 @@
+# ——— Build & packages (.NET / MSBuild) ———
+[Bb]in/
+[Oo]bj/
+out/
+artifacts/
+project.lock.json
+project.fragment.lock.json
+*.binlog
+*.nuget.props
+*.nuget.targets
+
+# NuGet (restore regenerates)
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+
+# ——— User / machine-specific ———
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.csproj.user
+*.DotSettings.user
+
+# ——— Secrets & local overrides ———
+.env
+.env.*
+!.env.example
+appsettings.*.local.json
+secrets.json
+
+# ——— IDE ———
+.vs/
+.idea/
+*.sln.iml
+
+# VS Code: ignore editor noise; allow shared workspace config if you add it
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+*.code-workspace
+
+# ——— Tests & coverage ———
+[Tt]est[Rr]esult*/
+TestResults/
+*.VisualState.xml
+TestResult.xml
+nunit-*.xml
+coverage*.json
+coverage*.xml
+coverage*.info
+*.coverage
+*.coveragexml
+BenchmarkDotNet.Artifacts/
+
+# ——— OS ———
+.DS_Store
+.AppleDouble
+._*
+Thumbs.db
+[Dd]esktop.ini
+
+# ——— Misc ———
+*.log
+*.tmp
+*.swp
+~$*

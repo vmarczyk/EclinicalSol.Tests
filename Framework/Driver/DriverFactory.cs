@@ -6,11 +6,11 @@ namespace EclinicalSol.Tests.Framework.Driver;
 // Factory class to create WebDriver instances based on configuration
 public static class DriverFactory
 {
-    public static IWebDriver Create(string browser = "chrome")
+    public static IWebDriver Create(string browser = "chrome", bool headless = false)
     {
         IWebDriver driver = browser.ToLower() switch
         {
-            "chrome" => CreateChromeDriver(),
+            "chrome" => CreateChromeDriver(headless),
             _ => throw new ArgumentException($"Browser '{browser}' is not supported.")
         };
 
@@ -18,12 +18,12 @@ public static class DriverFactory
         return driver;
     }
 
-    private static IWebDriver CreateChromeDriver()
+    private static IWebDriver CreateChromeDriver(bool headless)
     {
         var options = new ChromeOptions();
         options.AddArgument("--no-sandbox");
         options.AddArgument("--disable-dev-shm-usage");
-        options.AddArgument("--headless");
+        if (headless) options.AddArgument("--headless");
         return new ChromeDriver(options);
     }
 }

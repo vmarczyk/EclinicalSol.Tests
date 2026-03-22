@@ -23,4 +23,6 @@ public static class ConfigReader
     }
 
     public static string GetBrowser() => Config["browser"] ?? "chrome";
+
+    public static bool IsHeadless() => bool.TryParse(Config["headless"], out var v) && v;
 }

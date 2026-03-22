@@ -16,15 +16,5 @@ public static class InputControlTests
         Assert.That(input.Value, Is.EqualTo(text),
             $"Input value should be '{text}' after typing, but was '{input.Value}'.");
     }
-
-    public static void TestType_ReplacesExistingValue(InputControl input, string initial, string replacement)
-    {
-        input.Type(initial);
-        input.Type(replacement);
-
-        Assert.That(input.Value, Is.EqualTo(replacement),
-            $"Input should contain '{replacement}' after retyping, but was '{input.Value}'.");
-        Assert.That(input.Value, Is.Not.EqualTo(initial),
-            $"Input should no longer contain the initial value '{initial}'.");
-    }
+    
 }

@@ -9,26 +9,10 @@ public static class WaitHelper
 {
     private static readonly TimeSpan DefaultTimeout = TimeSpan.FromSeconds(10);
 
-    public static IWebElement WaitForElement(IWebDriver driver, By locator, TimeSpan? timeout = null)
-    {
-        var wait = CreateWait(driver, timeout);
-        return wait.Until(d => d.FindElement(locator));
-    }
-
     public static IWebElement WaitForVisible(IWebDriver driver, By locator, TimeSpan? timeout = null)
     {
         var wait = CreateWait(driver, timeout);
         return wait.Until(d => TryFindVisible(d, locator))!;
-    }
-
-    public static IWebElement WaitForText(IWebDriver driver, By locator, string expectedText, TimeSpan? timeout = null)
-    {
-        var wait = CreateWait(driver, timeout);
-        return wait.Until(d =>
-        {
-            var element = TryFindVisible(d, locator);
-            return element is not null && element.Text == expectedText ? element : null;
-        })!;
     }
 
     public static void WaitForNewTab(IWebDriver driver, int expectedTabCount, TimeSpan? timeout = null)

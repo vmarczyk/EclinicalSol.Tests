@@ -31,3 +31,4 @@ jobs:
           --filter "FullyQualifiedName~EclinicalSol.Tests.Tests"
         env:
           DISPLAY: :99
+          headless: true

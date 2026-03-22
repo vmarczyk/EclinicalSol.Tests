@@ -3,7 +3,7 @@ using EclinicalSol.Tests.Framework.Utils;
 
 namespace EclinicalSol.Tests.Framework.Base;
 
-// This is a base class for all pages
+// This is a base class for all pages to initialize the WebDriver
 // currently, it is only has a common helper method. 
 public abstract class PageBase(IWebDriver driver)
 {

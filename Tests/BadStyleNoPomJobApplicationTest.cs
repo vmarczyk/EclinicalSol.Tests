@@ -8,6 +8,7 @@ using OpenQA.Selenium.Support.UI;
 namespace EclinicalSol.Tests.Examples;
 
 // Example of BAD TEST: no Page Object Model, all logic in test method
+// might be flacky due to no waiting in some places
 [TestFixture]
 public class BadStyleNoPomJobApplicationTest
 {

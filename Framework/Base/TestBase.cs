@@ -13,7 +13,7 @@ public class TestBase
     [SetUp]
     public void SetUp()
     {
-        Driver = DriverFactory.Create(ConfigReader.GetBrowser());
+        Driver = DriverFactory.Create(ConfigReader.GetBrowser(), ConfigReader.IsHeadless());
         Driver.Navigate().GoToUrl(ConfigReader.GetBaseUrl());
     }
 

@@ -242,7 +242,7 @@ dotnet test --filter "FullyQualifiedName~JobApplicationTests"
 
 
 ### CI
-`scheduled-tests.yml` prototype of runs the suite on a schedule (GitHub Actions).
+`.github/workflows/ci.yml` runs pipeline on every commit or PR to main. 
 
 ---
 

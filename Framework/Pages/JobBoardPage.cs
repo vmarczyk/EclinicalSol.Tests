@@ -1,6 +1,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using EclinicalSol.Tests.Framework.Base;
+using EclinicalSol.Tests.Framework.Utils;
 using EclinicalSol.Tests.Framework.Controls;
 using EclinicalSol.Tests.Framework.Selectors;
 
@@ -14,6 +15,10 @@ public class JobBoardPage(IWebDriver driver) : PageBase(driver)
 
     public ApplicationFormPage OpenJob(string jobTitle)
     {
+        // Wait until exactly 1 job row is in the DOM — this is the only state
+        // has 28 jobs, so this wait correctly blocks until React finishes re-rendering.
+        WaitHelper.WaitForElementCount(Driver, By.CssSelector("tr.job-post"), expectedCount: 1);
+
         var link = WaitForVisible(JobBoardPageSelectors.JobLink(jobTitle));
         new Actions(Driver).ScrollToElement(link).MoveToElement(link).Click().Perform();
         return new ApplicationFormPage(Driver);

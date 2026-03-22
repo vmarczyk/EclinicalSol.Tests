@@ -19,7 +19,7 @@ public class JobApplicationTests : TestBase
             .OpenJobBoard();
 
         SearchControlTests.SearchIsVisible(jobBoard.JobSearch);
-        SearchControlTests.TestSearch_SetsInputValue(jobBoard.JobSearch, jobTitle);
+        jobBoard.JobSearch.Search(jobTitle);
 
         var form = jobBoard.OpenJob(jobTitle);
         form.AssertRequiredControlsVisible();

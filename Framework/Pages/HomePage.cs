@@ -11,11 +11,12 @@ public class HomePage(IWebDriver driver) : PageBase(driver)
 {
     public CareersPage GoToCareers()
     {
-        // Hover over "Resources" to expand the submenu, then click "Careers"
+        // Hover over "Resources" to expand the submenu, then move onto "Careers" and click.
         var resourcesMenu = WaitForVisible(HomePageSelectors.ResourcesMenuLink);
         new Actions(Driver).MoveToElement(resourcesMenu).Perform();
 
-        WaitForVisible(HomePageSelectors.CareersSubMenuLink).Click();
+        var careersLink = WaitForVisible(HomePageSelectors.CareersSubMenuLink);
+        new Actions(Driver).MoveToElement(careersLink).Click().Perform();
 
         return new CareersPage(Driver);
     }

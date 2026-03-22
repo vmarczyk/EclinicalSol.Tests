@@ -15,6 +15,14 @@ public static class WaitHelper
         return wait.Until(d => TryFindVisible(d, locator))!;
     }
 
+    // Waits until the number of matching elements equals the expected count.
+    // Use this to confirm a dynamic list has finished re-rendering after a filter or search.
+    public static void WaitForElementCount(IWebDriver driver, By locator, int expectedCount, TimeSpan? timeout = null)
+    {
+        var wait = CreateWait(driver, timeout);
+        wait.Until(d => d.FindElements(locator).Count == expectedCount);
+    }
+
     public static void WaitForNewTab(IWebDriver driver, int expectedTabCount, TimeSpan? timeout = null)
     {
         var wait = CreateWait(driver, timeout);
